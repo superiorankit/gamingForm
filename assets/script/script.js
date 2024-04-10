@@ -60,6 +60,11 @@ const register = (e) => {
         if (!email) {
             return false;
         }
+
+        if(email.includes(" "))
+        {
+            return false;
+        }
     
         const atIndex = email.indexOf('@');
         if (atIndex === -1 || atIndex === 0 || atIndex === email.length - 1) {
@@ -292,17 +297,7 @@ document.querySelectorAll("input").forEach((tag)=>{
 
 
 
-
-
-
-
-
-
-
-
-
-
-// Validation using Regex
+// Validation using Regex Starts
 
 // const register = (e) => {
 //     event.preventDefault();
@@ -521,3 +516,5 @@ document.querySelectorAll("input").forEach((tag)=>{
 //         document.querySelector(`#${event.target.attributes.id.nodeValue}+.error`).style.display="none"
 //     })
 // })
+
+//Validation using Regex Ends
