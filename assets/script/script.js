@@ -170,7 +170,7 @@ const register = (e) => {
         localStorage.setItem('data', JSON.stringify(data));
 
         setTimeout(() => {
-            location.href = "http://127.0.0.1:5500/profile.html"
+            location.href = "./profile.html"
         }, 2000);
 
         document.getElementById("form").reset();
