@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <title>Registration</title>
+    <link rel="stylesheet" href="./assets/style/style.css" />
+</head>
+
+<body>
+    <div class="main">
+        <div class="formBox">
+            <div class="formImgBox">
+                <img src="./assets/images/registrationImg.png" alt="registration Image" />
+                <h1>VANGUARD</h1>
+                <h2>ASSAULT</h2>
+            </div>
+            <div class="formCard">
+                <h1>Registration</h1>
+                <form id="form" onsubmit="register(event); return false;">
+                    <div class="inputBox">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" value="" onkeypress="validateName(event)"
+                            placeholder="Enter your Full Name" />
+                        <p class="error" id="nameError">Check your Name*</p>
+                    </div>
+                    <div class="inputBox">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" onkeypress="validatePhone(event)" placeholder="Enter your Phone Number" />
+                        <p class="error" id="phoneError">Check your Phone Number*</p>
+                    </div>
+                    <div class="inputBox">
+                        <label>Gender:</label>
+                        <div class="radioBox" id="radio">
+                            <label class="genderLabel" for="male">Male</label>
+                            <input type="radio" value="Male" id="male" name="gender" />
+
+                            <label class="genderLabel" for="female">Female</label>
+                            <input type="radio" value="Female" id="female" name="gender" />
+
+                            <label class="genderLabel" for="other">Other</label>
+                            <input type="radio" value="Other" id="other" name="gender" />
+                        </div>
+                        <p class="error" id="genderError">Select Gender</p>
+                    </div>
+                    <div class="inputBox">
+                        <label for="email">Email:</label>
+                        <input type="text" id="email" onkeypress="validateEmail(event)" placeholder="Enter your email" />
+                        <p class="error" id="emailError">Check your Email*</p>
+                    </div>
+                    <div class="inputBox">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" onkeypress="validateUser(event)" placeholder="Enter your username" />
+                        <p class="error" id="userError">Minimum length for username is 3*</p>
+                    </div>
+                    <div class="inputBox">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" onkeypress="validatePassword(event)" placeholder="Enter your password" />
+                        <p class="error" id="passError"></p>
+                    </div>
+                    <div class="inputBox">
+                        <label for="cPassword">Confirm Password:</label>
+                        <input type="password" id="cPassword" onkeypress="validateCPassword(event)"  placeholder="Retype Password" />
+                        <p class="error" id="cPassError"></p>
+                    </div>
+                    <button type="submit">Register</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="loaderBox" id="load">
+            <div class="loader"></div>
+        </div>
+    </div>
+
+    <script src="./assets/script/script.js"></script>
+</body>
+
+</html>

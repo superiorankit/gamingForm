@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Exo", sans-serif;
+}
+
+/* hide scrollbar but allow scrolling */
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root{
+    --primaryColor: #0d1423;
+    --secondaryColor: #121c30;
+    --tertiaryColor: #FF204E;;
+    --quaternary: #ee95b0;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color: var(--tertiaryColor);
+    font-family: "Exo 2", sans-serif;
+}
+
+/* Styles for the main container */
+.main {
+    background: linear-gradient(315deg, #010212, transparent), url(../images/mainBg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+    background-color: var(--primaryColor);
+}
+
+@keyframes topBottom {
+    from{
+        top: -100px;
+        opacity: 0;
+    }
+    to{
+        top: 0;
+        opacity: 1;
+    }
+    
+}
+
+/* Styles for the form box */
+.formBox {
+    background-color: #0d1423e8;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-evenly;
+    width: 80%;
+    overflow: hidden;
+    position: relative;
+    opacity: 0;
+    animation: topBottom 0.8s ease-in-out normal forwards;
+}
+
+/* Styles for the form image box */
+.formImgBox {
+    overflow: hidden;
+    position: relative;
+    width: 45%;
+    background-color: #0d1423;
+}
+
+@keyframes leftRight {
+    from{
+        left: -100px;
+        opacity: 0;
+    }
+    to{
+        left: -59px;
+        opacity: 1;
+    }
+    
+}
+
+.formImgBox img {
+    width: 130%;
+    position: absolute;
+    left: -100px;
+    top: -6px;
+    opacity: 0;
+    animation: leftRight 0.8s ease-in-out 0.8s normal forwards;
+}
+
+@keyframes rightLeftTxt {
+    from{
+        right: -100%;
+        opacity: 0;
+    }
+    to{
+        right: 50%;
+        opacity: 1;
+    }
+    
+}
+
+.formImgBox h1{
+    position: absolute;
+    font-size: 4em;
+    letter-spacing: 6px;
+    bottom: 50px;
+    right: 50%;
+    transform: translatex(50%);
+    opacity: 0;
+    animation: rightLeftTxt 0.8s ease-in 0.9s normal forwards;
+
+}
+
+
+
+.formImgBox h2{
+    position: absolute;
+    font-size: 2em;
+    letter-spacing: 32px;
+    bottom: 20px;
+    right: 50%;
+    color: var(--quaternary);
+    opacity: 0;
+    transform: translatex(53%);
+        animation: rightLeftTxt 0.8s ease-in 1s normal forwards;
+}
+
+@keyframes rightLeft {
+    from{
+        right: -50px;
+        opacity: 0;
+    }
+    to{
+        right: 0px;
+        opacity: 1;
+    }
+    
+}
+
+/* Styles for the form card */
+.formCard {
+    position: relative;
+    opacity: 0;
+    padding: 20px 40px;
+    width: 60%;
+    animation: rightLeft 0.8s ease-in-out 0.8s normal forwards;
+}
+
+
+
+/* Styles for the registration heading */
+.formCard h1 {
+    margin-bottom: 30px;
+}
+
+/* Styles for input boxes */
+.inputBox {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.inputBox label {
+    display: block;
+    font-size: 0.9em;
+    color: var(--quaternary);
+    font-weight: 600;
+}
+
+@keyframes vibrate{
+    from{
+        left:-2px;
+    }
+    to{
+        left:2px;
+    }
+}
+
+/* Autocomplete in chrome changes bg color of input so giving custom css */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-text-fill-color: #e5a8ba;
+    box-shadow: inset 0 0 20px 20px #090f1b;
+    caret-color: rgba(255, 255, 255, 0.614);
+}
+
+
+
+.inputBox input[type="text"],
+.inputBox input[type="tel"],
+.inputBox input[type="email"],
+.inputBox input[type="password"]{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background-color: #090f1b;
+    color: #e5a8ba;
+    position: relative;
+}
+
+.radioBox{
+    width: 70%;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    position: relative;
+}
+
+/* Styles for gender labels */
+.genderLabel {
+    font-size: 0.8em !important;
+    margin: 0 2%;
+}
+
+.inputBox input[type="radio"]{
+    margin-right: 10%;
+    filter: hue-rotate(126deg);
+}
+
+.error{
+    position: absolute;
+    font-size: 0.6em;
+    color: var(--quaternary);
+    right: 0px;
+    bottom: -13px;
+    display: none;
+}
+
+
+
+/* Styles for the submit button */
+button[type="submit"] {
+    display: block;
+    margin-left: auto;
+    margin-top: 25px;
+    padding: 10px 20px;
+    background-color: var(--tertiaryColor);
+    font-weight: bold;
+    font-family: "Exo 2", sans-serif;
+    letter-spacing: 0.5px;
+    color: var(--quaternary);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #e90030;
+}
+
+button[type="submit"]:active{
+    transform: scale(0.8);
+}
+
+.loaderBox{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    place-content: center;
+    background-color: #121c30b6;
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.loader {
+    border: 5px solid var(--quaternary);
+    border-radius: 50%;
+    border-top: 5px solid var(--tertiaryColor);
+    width: 40px;
+    height: 40px;
+    animation: spin 0.7s linear infinite;
+  }
