@@ -5,11 +5,11 @@ const register = (e) => {
     event.preventDefault();
 
     const name = e.target.name.value.trim();
-    const phone = e.target.phone.value;
-    const email = e.target.email.value;
-    const user = e.target.username.value;
-    const password = e.target.password.value;
-    const cpassword = e.target.cPassword.value;
+    const phone = e.target.phone.value.trim();
+    const email = e.target.email.value.trim();
+    const user = e.target.username.value.trim();
+    const password = e.target.password.value.trim();
+    const cpassword = e.target.cPassword.value.trim();
 
     const arr = ["male", "female", "other"];
     let gender;
@@ -68,6 +68,13 @@ const register = (e) => {
     
         const dotIndex = email.indexOf('.', atIndex);
         if (dotIndex === -1 || dotIndex === atIndex + 1 || dotIndex === email.length - 1) {
+            return false;
+        }
+
+        const lastIndex = email.length-1;
+
+        if(email.charAt(lastIndex) === "@" || email.charAt(lastIndex) === ".")
+        {
             return false;
         }
     
