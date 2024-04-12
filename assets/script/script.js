@@ -183,6 +183,7 @@ const register = (e) => {
 
         setTimeout(() => {
             location.href = "./profile.html"
+
         }, 2000);
 
         document.getElementById("form").reset();
@@ -204,7 +205,7 @@ const validateName = (e) => {
     if (!((e.key >= "A" && e.key <= "Z") || (e.key >= "a" && e.key <= "z")) && e.key !== " ") {
         document.getElementById('nameError').style.display = 'block';
         name.style.animation = "vibrate 0.1s linear 5 alternate";
-        name.style.border = "1px solid var(--tertiaryColor)"
+        name.style.border = "1px solid var(--tertiaryColor)";
         name.addEventListener("animationend", (e) => e.target.style.animation = '');
         event.preventDefault();
     }

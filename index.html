@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="icon" type="image/x-icon" href="./assets/icon/valorantIcon.png"/>
+    <link rel="icon" type="image/x-icon" href="./assets/icon/valorantIcon.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,7 +36,8 @@
                     </div>
                     <div class="inputBox">
                         <label for="phone">Phone:</label>
-                        <input type="tel" id="phone" onkeypress="validatePhone(event)" placeholder="Enter your Phone Number" />
+                        <input type="tel" id="phone" onkeypress="validatePhone(event)"
+                            placeholder="Enter your Phone Number" />
                         <p class="error" id="phoneError">Check your Phone Number*</p>
                     </div>
                     <div class="inputBox">
@@ -55,22 +56,37 @@
                     </div>
                     <div class="inputBox">
                         <label for="email">Email:</label>
-                        <input type="text" id="email" onkeypress="validateEmail(event)" placeholder="Enter your email" />
+                        <input type="text" id="email" onkeypress="validateEmail(event)"
+                            placeholder="Enter your email" />
                         <p class="error" id="emailError">Check your Email*</p>
                     </div>
                     <div class="inputBox">
                         <label for="username">Username:</label>
-                        <input type="text" id="username" onkeypress="validateUser(event)" placeholder="Enter your username" />
+                        <input type="text" id="username" onkeypress="validateUser(event)"
+                            placeholder="Enter your username" />
                         <p class="error" id="userError">Minimum length for username is 3*</p>
                     </div>
                     <div class="inputBox">
                         <label for="password">Password:</label>
-                        <input type="password" id="password" onkeypress="validatePassword(event)" placeholder="Enter your password" />
+                        <input type="password" id="password" onkeypress="validatePassword(event)"
+                            placeholder="Enter your password" />
+                        <div class="tooltip">i
+                        </div>
+                        <div class="tooltipTxt">
+                            <ul>
+                                <li>- Minimum length should be 5</li>
+                                <li>- Must contain atleast one special character</li>
+                                <li>- Must contain atleast one digit</li>
+                                <li>- Must contain atleast one uppercase</li>
+                                <li>- Must contain atleast one lowercase</li>
+                            </ul>
+                        </div>
                         <p class="error" id="passError"></p>
                     </div>
                     <div class="inputBox">
                         <label for="cPassword">Confirm Password:</label>
-                        <input type="password" id="cPassword" onkeypress="validateCPassword(event)"  placeholder="Retype Password" />
+                        <input type="password" id="cPassword" onkeypress="validateCPassword(event)"
+                            placeholder="Retype Password" />
                         <p class="error" id="cPassError"></p>
                     </div>
                     <button type="submit">Register</button>
